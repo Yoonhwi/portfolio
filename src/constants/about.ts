@@ -1,4 +1,9 @@
-export const photo = [
+export interface photoType {
+  src: string;
+  text: string;
+}
+
+export const photo: photoType[] = [
   {
     src: "photo1.jpg",
     text: "hi",

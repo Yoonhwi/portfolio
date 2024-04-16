@@ -1,13 +1,18 @@
-import { photo } from "@/constants";
-import PhotoCard from "./PhotoCard";
+import { ImageSlide } from "@/components";
+import { Box } from "@chakra-ui/react";
 
 const Photo = () => {
   return (
-    <>
-      {photo.map((item) => {
-        return <PhotoCard src={item.src} text={item.text} />;
-      })}
-    </>
+    <Box
+      w={500}
+      h={600}
+      bgColor={"white"}
+      boxShadow={"dark-lg"}
+      borderRadius={24}
+      p={4}
+    >
+      <ImageSlide />
+    </Box>
   );
 };
 

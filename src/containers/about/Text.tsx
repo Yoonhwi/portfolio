@@ -2,7 +2,7 @@ import { Heading, Stack, Text as _Text } from "@chakra-ui/react";
 
 const Text = () => {
   return (
-    <Stack spacing={12}>
+    <Stack spacing={12} w={500}>
       <Heading>Introduce</Heading>
       <_Text>hi</_Text>
     </Stack>
