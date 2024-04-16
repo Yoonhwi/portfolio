@@ -9,7 +9,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
     <>
       <DefaultLayoutHeader />
-      <Box w={{ base: "100%" }} mt={"106px"} as={"main"}>
+      <Box w={{ base: "100%" }} mt={"100px"} as={"main"}>
         {children}
       </Box>
     </>

@@ -1,12 +1,12 @@
-import { Box } from "@chakra-ui/react";
-import { useCallback, useEffect, useState } from "react";
 import { Navbar } from "@/containers";
+import { Flex } from "@chakra-ui/react";
+import { useCallback, useEffect, useState } from "react";
 
 const DefaultLayoutHeader = () => {
-  const [isMax, setIsMax] = useState(false);
+  const [isMax, setIsMax] = useState(true);
 
   const scrollListener = useCallback(() => {
-    setIsMax(window.scrollY > 0);
+    setIsMax(window.scrollY <= 0);
   }, []);
 
   useEffect(() => {
@@ -18,17 +18,16 @@ const DefaultLayoutHeader = () => {
 
   return (
     <>
-      <Box
+      <Flex
         as={"header"}
         w={"100%"}
         position={"fixed"}
         top={0}
         zIndex={99}
-        boxShadow={isMax ? "md" : "none"}
-        opacity={isMax ? 0.7 : 1}
+        boxShadow={isMax ? "none" : "md"}
       >
         <Navbar />
-      </Box>
+      </Flex>
     </>
   );
 };

@@ -1,10 +1,12 @@
 import { DefaultLayout } from "@/components";
-import { Box } from "@chakra-ui/react";
+import { About, Contact, Project } from "./containers";
 
 function App() {
   return (
     <DefaultLayout>
-      <Box minH={1500}>hello</Box>
+      <About />
+      <Project />
+      <Contact />
     </DefaultLayout>
   );
 }

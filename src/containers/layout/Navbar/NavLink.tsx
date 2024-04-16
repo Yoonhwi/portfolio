@@ -1,6 +1,7 @@
 import { navLinks } from "@/constants";
 import { HStack, Box } from "@chakra-ui/react";
 import { useCallback } from "react";
+import ContactLink from "./ContactLink";
 const NavLink = () => {
   const hanldeNavClick = useCallback((offsetY: number) => {
     window.scrollTo({ top: offsetY, behavior: "smooth" });
@@ -22,6 +23,7 @@ const NavLink = () => {
           {link.name}
         </Box>
       ))}
+      <ContactLink />
     </HStack>
   );
 };
