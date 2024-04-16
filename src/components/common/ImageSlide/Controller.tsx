@@ -1,5 +1,5 @@
 import { Button, HStack } from "@chakra-ui/react";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect } from "react";
 import { slideProps } from ".";
 
 interface ControllerProps {
@@ -8,9 +8,7 @@ interface ControllerProps {
 }
 
 const Controller = ({ slide, setSlide }: ControllerProps) => {
-  const auto = 5000;
-
-  const changeSlide = (index: number) => {
+  const changeSlide = useCallback((index: number) => {
     if (index >= slide.images.length) {
       index = 0;
     }
@@ -20,29 +18,19 @@ const Controller = ({ slide, setSlide }: ControllerProps) => {
         index: index,
       };
     });
-  };
+  }, []);
 
-  let interval: number | undefined = undefined;
-
-  const autoSlide = useRef<() => void | undefined>();
-
-  autoSlide.current = () => {
-    if (auto > 0) {
-      interval = setInterval(() => {
-        setSlide((prev) => {
-          return {
-            ...prev,
-            index: prev.index + 1 >= prev.images.length ? 0 : prev.index + 1,
-          };
-        });
-      }, auto);
-    }
-  };
   useEffect(() => {
-    if (!autoSlide.current) return;
-    autoSlide.current();
+    const interval = setInterval(() => {
+      setSlide((prev) => {
+        return {
+          ...prev,
+          index: prev.index + 1 >= prev.images.length ? 0 : prev.index + 1,
+        };
+      });
+    }, 5000);
     return () => clearInterval(interval);
-  }, [interval]);
+  }, []);
 
   return (
     <HStack mt={4} w="full" justify="center" position={"absolute"} bottom={0}>

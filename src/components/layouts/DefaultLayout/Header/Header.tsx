@@ -1,6 +1,6 @@
-import { Navbar } from "@/containers";
 import { Flex } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
+import { Navbar } from "./Navbar";
 
 const DefaultLayoutHeader = () => {
   const [isMax, setIsMax] = useState(true);

@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import DefaultLayoutHeader from "./Header";
+import { DefaultLayoutHeader } from "./Header";
 
 interface DefaultLayoutProps {
   children?: React.ReactNode;
