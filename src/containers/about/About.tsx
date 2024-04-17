@@ -3,7 +3,7 @@ import { Photo, Text } from ".";
 
 const About = () => {
   return (
-    <Box h={800} bgColor={"primary.100"}>
+    <Box h={800} bgImage={"photo1.jpg"} bgSize={"cover"}>
       <Flex h={800} justifyContent={"center"} alignItems={"center"} gap={16}>
         <Photo />
         <Text />

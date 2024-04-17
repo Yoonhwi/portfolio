@@ -8,17 +8,20 @@ interface ControllerProps {
 }
 
 const Controller = ({ slide, setSlide }: ControllerProps) => {
-  const changeSlide = useCallback((index: number) => {
-    if (index >= slide.images.length) {
-      index = 0;
-    }
-    setSlide((prev) => {
-      return {
-        ...prev,
-        index: index,
-      };
-    });
-  }, []);
+  const changeSlide = useCallback(
+    (index: number) => {
+      if (index >= slide.images.length) {
+        index = 0;
+      }
+      setSlide((prev) => {
+        return {
+          ...prev,
+          index: index,
+        };
+      });
+    },
+    [setSlide, slide.images.length]
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,7 +33,7 @@ const Controller = ({ slide, setSlide }: ControllerProps) => {
       });
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [setSlide]);
 
   return (
     <HStack mt={4} w="full" justify="center" position={"absolute"} bottom={0}>

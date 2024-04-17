@@ -6,14 +6,14 @@ export interface photoType {
 export const photo: photoType[] = [
   {
     src: "photo1.jpg",
-    text: "hi",
+    text: "😀",
   },
   {
     src: "photo2.jpg",
-    text: "hihi",
+    text: "😆",
   },
   {
     src: "photo3.jpg",
-    text: "hihihi",
+    text: "😋",
   },
 ];
