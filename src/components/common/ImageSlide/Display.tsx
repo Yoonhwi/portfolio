@@ -3,9 +3,11 @@ import { slideProps } from ".";
 
 interface DisplayProps {
   slide: slideProps;
+  h: number;
+  w: number;
 }
 
-const DisplayImage = ({ slide }: DisplayProps) => {
+const DisplayImage = ({ slide, h, w }: DisplayProps) => {
   return (
     <>
       {slide.images.map((img, index) => (
@@ -17,8 +19,8 @@ const DisplayImage = ({ slide }: DisplayProps) => {
           <Flex direction="column" gap={8} alignItems="center">
             <Image
               src={img.src}
-              w={500}
-              h={400}
+              w={w}
+              h={h}
               borderRadius={24}
               boxShadow={"xl"}
             />

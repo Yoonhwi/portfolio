@@ -1,12 +1,14 @@
-import { ProjectType } from "@/constants";
+import { ImageSlide } from "@/components";
+import { ProjectType, imgByProject } from "@/constants";
 import {
+  Box,
   Card,
   CardBody,
   CardHeader,
+  Flex,
   Heading,
   Stack,
   StackDivider,
-  Image,
 } from "@chakra-ui/react";
 
 interface ProjectCardProps {
@@ -14,6 +16,8 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ data }: ProjectCardProps) => {
+  const imgs = imgByProject[data.name];
+
   return (
     <Card
       w={"100%"}
@@ -30,7 +34,11 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
           </Heading>
         </CardHeader>
         <CardBody>
-          <Image src={data.imgSrc} h={400} w={500} alt={`${data.name}_img`} />
+          <Flex>
+            <Box h={500}>
+              <ImageSlide images={imgs} w={500} h={400} />
+            </Box>
+          </Flex>
         </CardBody>
       </Stack>
     </Card>

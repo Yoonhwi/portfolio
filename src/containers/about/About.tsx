@@ -1,11 +1,11 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import { Photo, Text } from ".";
 import { CenterLayout } from "@/components";
-import { useDeviceType, useHeightByDevice } from "@/hooks";
+import { useDeviceType, useGetHeightByDevice } from "@/hooks";
 
 const About = () => {
   const isMobile = useDeviceType();
-  const { parentHeight, childHeight } = useHeightByDevice("about");
+  const { parentHeight, childHeight } = useGetHeightByDevice("about");
 
   return (
     <Box h={parentHeight} bgImage={"photo1.jpg"} bgSize={"cover"}>

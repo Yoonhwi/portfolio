@@ -1,4 +1,5 @@
 import { ImageSlide } from "@/components";
+import { photo } from "@/constants";
 import { Box } from "@chakra-ui/react";
 
 const Photo = () => {
@@ -11,7 +12,7 @@ const Photo = () => {
       borderRadius={24}
       p={4}
     >
-      <ImageSlide />
+      <ImageSlide images={photo} w={500} h={400} />
     </Box>
   );
 };

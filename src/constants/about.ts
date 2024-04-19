@@ -5,11 +5,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { IoSchoolSharp } from "react-icons/io5";
-
-export interface PhotoType {
-  src: string;
-  text: string;
-}
+import { PhotoType } from ".";
 
 export interface MyInfoType {
   key: string;
