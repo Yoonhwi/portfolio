@@ -8,6 +8,7 @@ interface ImageSlideProps {
   images: PhotoType[];
   h: number;
   w: number;
+  auto?: number;
 }
 
 export interface slideProps {
@@ -16,7 +17,7 @@ export interface slideProps {
   prevIndex: number;
 }
 
-const ImageSlide = ({ images, h, w }: ImageSlideProps) => {
+const ImageSlide = ({ images, h, w, auto }: ImageSlideProps) => {
   const [slide, setSlide] = useState<slideProps>({
     images: images,
     index: 0,
@@ -27,7 +28,7 @@ const ImageSlide = ({ images, h, w }: ImageSlideProps) => {
       {slide.images && slide.images.length > 0 && (
         <>
           <DisplayImage slide={slide} h={h} w={w} />
-          <Controller slide={slide} setSlide={setSlide} />
+          <Controller slide={slide} setSlide={setSlide} auto={auto} />
         </>
       )}
     </Flex>

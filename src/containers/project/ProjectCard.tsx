@@ -29,15 +29,21 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
     >
       <Stack divider={<StackDivider />}>
         <CardHeader>
-          <Heading size={"xl"} color={"primary.500"}>
-            {data.name}
-          </Heading>
+          <Flex alignItems={"end"} gap={8}>
+            <Heading size={"xl"} color={"primary.500"}>
+              {data.name}
+            </Heading>
+            <Heading size={"sm"} color={"primary.500"} pb={1}>
+              {data.date}
+            </Heading>
+          </Flex>
         </CardHeader>
         <CardBody>
-          <Flex>
-            <Box h={500}>
+          <Flex gap={8}>
+            <Box h={500} w={500}>
               <ImageSlide images={imgs} w={500} h={400} />
             </Box>
+            {data.description && data.description()}
           </Flex>
         </CardBody>
       </Stack>

@@ -5,9 +5,10 @@ import { slideProps } from ".";
 interface ControllerProps {
   slide: slideProps;
   setSlide: React.Dispatch<React.SetStateAction<slideProps>>;
+  auto?: number;
 }
 
-const Controller = ({ slide, setSlide }: ControllerProps) => {
+const Controller = ({ slide, setSlide, auto }: ControllerProps) => {
   const changeSlide = useCallback(
     (index: number) => {
       if (index >= slide.images.length) {
@@ -24,6 +25,7 @@ const Controller = ({ slide, setSlide }: ControllerProps) => {
   );
 
   useEffect(() => {
+    if (!auto) return;
     const interval = setInterval(() => {
       setSlide((prev) => {
         return {
@@ -31,9 +33,9 @@ const Controller = ({ slide, setSlide }: ControllerProps) => {
           index: prev.index + 1 >= prev.images.length ? 0 : prev.index + 1,
         };
       });
-    }, 5000);
+    }, auto);
     return () => clearInterval(interval);
-  }, [setSlide]);
+  }, [auto, setSlide]);
 
   return (
     <HStack mt={4} w="full" justify="center" position={"absolute"} bottom={0}>

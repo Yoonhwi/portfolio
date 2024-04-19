@@ -13,4 +13,8 @@ export const imgByProject: imgByProjectType = {
     { src: "/cooka/cooka2.png" },
     { src: "/cooka/cooka3.png" },
   ],
+  Calendar: [
+    { src: "/calendar/calendar-main.png" },
+    { src: "/calendar/calendar1.png" },
+  ],
 };

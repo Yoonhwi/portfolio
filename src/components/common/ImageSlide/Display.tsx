@@ -11,11 +11,7 @@ const DisplayImage = ({ slide, h, w }: DisplayProps) => {
   return (
     <>
       {slide.images.map((img, index) => (
-        <Collapse
-          animateOpacity
-          in={index === slide?.index}
-          key={`${img.src}_${index}`}
-        >
+        <Collapse in={index === slide?.index} key={`${img.src}_${index}`}>
           <Flex direction="column" gap={8} alignItems="center">
             <Image
               src={img.src}
