@@ -2,10 +2,10 @@ import { useState } from "react";
 import Controller from "./Controller";
 import { Flex } from "@chakra-ui/react";
 import DisplayImage from "./Display";
-import { photoType, photo } from "@/constants";
+import { PhotoType, photo } from "@/constants";
 
 export interface slideProps {
-  images: photoType[];
+  images: PhotoType[];
   index: number;
   prevIndex: number;
 }

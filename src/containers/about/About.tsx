@@ -1,14 +1,34 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { Photo, Text } from ".";
 import { CenterLayout } from "@/components";
+import { useDeviceType, useHeightByDevice } from "@/hooks";
 
 const About = () => {
+  const isMobile = useDeviceType();
+  const { parentHeight, childHeight } = useHeightByDevice("about");
+
   return (
-    <Box h={800} bgImage={"photo1.jpg"} bgSize={"cover"}>
+    <Box h={parentHeight} bgImage={"photo1.jpg"} bgSize={"cover"}>
       <CenterLayout>
-        <Flex h={800} justifyContent={"center"} alignItems={"center"} gap={16}>
-          <Photo />
-          <Text />
+        <Flex
+          alignItems={"center"}
+          direction={"column"}
+          h={parentHeight}
+          gap={20}
+        >
+          <Heading size={"3xl"} mt={20}>
+            About Me
+          </Heading>
+          <Flex
+            h={childHeight}
+            justifyContent={"center"}
+            alignItems={"center"}
+            gap={16}
+            direction={isMobile ? "column" : "row"}
+          >
+            <Photo />
+            <Text />
+          </Flex>
         </Flex>
       </CenterLayout>
     </Box>

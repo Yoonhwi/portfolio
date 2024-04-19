@@ -5,26 +5,23 @@ import ProjectCard from "./ProjectCard";
 
 const Project = () => {
   return (
-    <Box h={1200} bgColor={"primary.200"}>
+    <Box h={2800}>
       <CenterLayout>
-        <Flex alignItems={"center"} direction={"column"} h={1200} gap={20}>
-          <Heading size={"3xl"} color={"white"} mt={20}>
+        <Flex alignItems={"center"} direction={"column"} h={2800} gap={20}>
+          <Heading size={"3xl"} color={"primary.500"} mt={20}>
             Project
           </Heading>
           <Grid
-            templateColumns="repeat(2, 2fr)"
+            templateColumns="repeat(1, 4fr)"
             gap={4}
             w="100%"
-            h={800}
+            h={2400}
             borderRadius={24}
             boxShadow="dark-lg"
             p={4}
-            bgColor={"white"}
           >
             {projects.map((project) => {
-              return (
-                <ProjectCard name={project.name} imgSrc={project.imgSrc} />
-              );
+              return <ProjectCard data={project} />;
             })}
           </Grid>
         </Flex>
