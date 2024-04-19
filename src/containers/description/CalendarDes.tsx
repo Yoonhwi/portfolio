@@ -3,7 +3,7 @@ import { Flex } from "@chakra-ui/react";
 
 const CalendarDes = () => {
   return (
-    <Flex direction={"column"} bgColor={"red"}>
+    <Flex direction={"column"}>
       <OpenWindowBtn project="Calendar" />
       <Flex wrap={"wrap"} w={"100%"} p={2}>
         123564126543012654 011265410126540 11265 04112650 411625 01412650 11265

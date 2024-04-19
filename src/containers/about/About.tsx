@@ -14,11 +14,10 @@ const About = () => {
           alignItems={"center"}
           direction={"column"}
           h={parentHeight}
-          gap={20}
+          gap={4}
+          py={8}
         >
-          <Heading size={"3xl"} mt={20}>
-            About Me
-          </Heading>
+          <Heading size={"3xl"}>About Me</Heading>
           <Flex
             h={childHeight}
             justifyContent={"center"}

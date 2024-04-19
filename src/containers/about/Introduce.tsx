@@ -8,6 +8,7 @@ import {
   Heading,
   Icon,
   Stack,
+  Text,
 } from "@chakra-ui/react";
 
 const Introduce = () => {
@@ -17,14 +18,14 @@ const Introduce = () => {
         return (
           <Card key={meta.key} boxShadow={"xl"}>
             <Stack>
-              <CardHeader p={2} pt={4} pl={4}>
+              <CardHeader p={4} pb={2}>
                 <Flex alignItems={"center"} gap={2}>
                   <Icon as={meta.icon} fontSize={24} />
                   <Heading size={"md"}>{meta.key}</Heading>
                 </Flex>
               </CardHeader>
-              <CardBody p={2} pb={4} pl={4} fontWeight={600}>
-                {meta.value}
+              <CardBody p={4} pt={2}>
+                <Text fontWeight={"semibold"}>{meta.value}</Text>
               </CardBody>
             </Stack>
           </Card>

@@ -1,7 +1,6 @@
 import { ImageSlide } from "@/components";
 import { ProjectType, imgByProject } from "@/constants";
 import {
-  Box,
   Card,
   CardBody,
   CardHeader,
@@ -40,9 +39,7 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
         </CardHeader>
         <CardBody>
           <Flex gap={8}>
-            <Box h={500} w={500}>
-              <ImageSlide images={imgs} w={500} h={400} />
-            </Box>
+            <ImageSlide images={imgs} w={500} />
             {data.description && data.description()}
           </Flex>
         </CardBody>

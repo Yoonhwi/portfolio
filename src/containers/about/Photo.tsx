@@ -12,7 +12,7 @@ const Photo = () => {
       borderRadius={24}
       p={4}
     >
-      <ImageSlide images={photo} w={500} h={400} auto={5000} />
+      <ImageSlide images={photo} w={468} auto={5000} />
     </Box>
   );
 };

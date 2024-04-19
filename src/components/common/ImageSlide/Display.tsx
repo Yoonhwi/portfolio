@@ -1,30 +1,38 @@
-import { Flex, Collapse, Image, Text } from "@chakra-ui/react";
+import { Collapse, Flex, Image, Text } from "@chakra-ui/react";
 import { slideProps } from ".";
 
 interface DisplayProps {
   slide: slideProps;
-  h: number;
   w: number;
 }
 
-const DisplayImage = ({ slide, h, w }: DisplayProps) => {
+const DisplayImage = ({ slide, w }: DisplayProps) => {
   return (
-    <>
-      {slide.images.map((img, index) => (
-        <Collapse in={index === slide?.index} key={`${img.src}_${index}`}>
-          <Flex direction="column" gap={8} alignItems="center">
-            <Image
-              src={img.src}
-              w={w}
-              h={h}
-              borderRadius={24}
-              boxShadow={"xl"}
-            />
-            <Text> {slide.images[slide.index].text} </Text>
-          </Flex>
-        </Collapse>
-      ))}
-    </>
+    <Flex flex={1} justify={"center"} direction={"column"}>
+      {slide.images.map((img, index) => {
+        const text = slide.images[slide.index].text;
+
+        return (
+          <Collapse in={index === slide?.index} key={`${img.src}_${index}`}>
+            <Flex flex={1} direction="column" gap={8}>
+              <Image
+                src={img.src}
+                minW={w}
+                maxW={w}
+                borderRadius={24}
+                boxShadow={"xl"}
+                objectFit={"cover"}
+              />
+              {text && (
+                <Text textAlign={"center"}>
+                  {slide.images[slide.index].text}
+                </Text>
+              )}
+            </Flex>
+          </Collapse>
+        );
+      })}
+    </Flex>
   );
 };
 

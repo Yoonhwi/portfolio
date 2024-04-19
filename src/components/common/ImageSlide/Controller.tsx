@@ -38,7 +38,7 @@ const Controller = ({ slide, setSlide, auto }: ControllerProps) => {
   }, [auto, setSlide]);
 
   return (
-    <HStack mt={4} w="full" justify="center" position={"absolute"} bottom={0}>
+    <HStack mt={4} w="full" justify="center">
       {slide.images.map((img, index) => (
         <Button
           onClick={() => changeSlide(index)}
