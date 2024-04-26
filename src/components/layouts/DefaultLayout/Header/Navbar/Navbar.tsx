@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 const Navbar = () => {
   return (
-    <Box width={"1280px"} margin={"0 auto"} zIndex={999}>
+    <Box width={"1280px"} margin={"0 auto"} zIndex={99}>
       <Flex
         w={"100%"}
         justifyContent={"space-between"}

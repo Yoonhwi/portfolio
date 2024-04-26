@@ -15,7 +15,7 @@ const About = () => {
           direction={"column"}
           h={parentHeight}
           gap={4}
-          py={8}
+          py={20}
         >
           <Heading size={"3xl"}>About Me</Heading>
           <Flex

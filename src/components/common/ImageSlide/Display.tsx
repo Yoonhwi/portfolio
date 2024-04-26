@@ -22,6 +22,7 @@ const DisplayImage = ({ slide, w }: DisplayProps) => {
                 borderRadius={24}
                 boxShadow={"xl"}
                 objectFit={"cover"}
+                h={400}
               />
               {text && (
                 <Text textAlign={"center"}>

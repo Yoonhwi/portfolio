@@ -1,6 +1,7 @@
-import { ImageSlide } from "@/components";
-import { ProjectType, imgByProject } from "@/constants";
+import { Swiper } from "@/components";
+import { PhotoType, ProjectType, imgByProject } from "@/constants";
 import {
+  Box,
   Card,
   CardBody,
   CardHeader,
@@ -9,6 +10,7 @@ import {
   Stack,
   StackDivider,
 } from "@chakra-ui/react";
+import { ProjectImage } from "@/containers";
 
 interface ProjectCardProps {
   data: ProjectType;
@@ -39,7 +41,12 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
         </CardHeader>
         <CardBody>
           <Flex gap={8}>
-            <ImageSlide images={imgs} w={500} />
+            <Box w={500} h={400} boxShadow={"lg"}>
+              {imgs && imgs.length > 0 && (
+                <Swiper<PhotoType> datas={imgs} renderItem={ProjectImage} />
+              )}
+            </Box>
+            {/* <ImageSlide images={imgs} w={500} /> */}
             {data.description && data.description()}
           </Flex>
         </CardBody>

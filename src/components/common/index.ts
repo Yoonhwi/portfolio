@@ -1,2 +1,3 @@
 export { default as ImageSlide } from "./ImageSlide";
-export { default as OpenWindowBtn } from "./OpenWindowBtn";
+export * from "./OpenWindowBtn";
+export * from "./Swiper";
