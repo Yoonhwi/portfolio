@@ -1,29 +1,18 @@
+import { CenterLayout } from "@/components";
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import { Photo, Text } from ".";
-import { CenterLayout } from "@/components";
-import { useDeviceType, useGetHeightByDevice } from "@/hooks";
 
 const About = () => {
-  const isMobile = useDeviceType();
-  const { parentHeight, childHeight } = useGetHeightByDevice("about");
-
   return (
-    <Box h={parentHeight} bgImage={"photo1.jpg"} bgSize={"cover"}>
+    <Box bgColor={"gray.100"}>
       <CenterLayout>
-        <Flex
-          alignItems={"center"}
-          direction={"column"}
-          h={parentHeight}
-          gap={4}
-          py={20}
-        >
+        <Flex alignItems={"center"} direction={"column"} gap={20} py={20}>
           <Heading size={"3xl"}>About Me</Heading>
           <Flex
-            h={childHeight}
             justifyContent={"center"}
             alignItems={"center"}
             gap={16}
-            direction={isMobile ? "column" : "row"}
+            direction={{ base: "column", xl: "row" }}
           >
             <Photo />
             <Text />

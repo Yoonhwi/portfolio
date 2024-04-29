@@ -1,19 +1,22 @@
-import { ImageSlide } from "@/components";
-import { photo } from "@/constants";
-import { Box } from "@chakra-ui/react";
+import { Swiper } from "@/components";
+import { PhotoType, photo } from "@/constants";
+import { Flex } from "@chakra-ui/react";
+import { AboutImage } from ".";
 
 const Photo = () => {
   return (
-    <Box
+    <Flex
       w={500}
       h={600}
-      bgColor={"white"}
-      boxShadow={"dark-lg"}
-      borderRadius={24}
-      p={4}
+      direction={"column"}
+      gap={4}
+      alignItems={"center"}
+      boxShadow={"2xl"}
+      overflow={"hidden"}
+      p={2}
     >
-      <ImageSlide images={photo} w={468} auto={5000} />
-    </Box>
+      <Swiper<PhotoType> datas={photo} renderItem={AboutImage} />
+    </Flex>
   );
 };
 

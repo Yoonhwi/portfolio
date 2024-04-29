@@ -3,3 +3,4 @@ export { default as Photo } from "./Photo";
 export { default as Text } from "./Text";
 export { default as TechStack } from "./TechStack";
 export { default as Introduce } from "./Introduce";
+export { default as AboutImage } from "./AboutImage";
