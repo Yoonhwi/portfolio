@@ -1,5 +1,4 @@
-import { CookaDes } from "@/containers";
-import CalendarDes from "@/containers/description/CalendarDes";
+import { CookaDes, CalendarDes, JoinusDes } from "@/containers";
 
 export interface ProjectType {
   name: string;
@@ -15,6 +14,7 @@ export const projects: ProjectType[] = [
   {
     name: "Join-Us",
     date: "2024.02 ~ ",
+    description: JoinusDes,
   },
   {
     name: "Calendar",

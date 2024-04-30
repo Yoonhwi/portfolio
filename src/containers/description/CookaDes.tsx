@@ -2,8 +2,8 @@ import { OpenWindowBtn } from "@/components";
 import { Flex, Heading, Tag, Text } from "@chakra-ui/react";
 
 const Stacks: { [key: string]: string[] } = {
-  FrontStacks: ["HTML/CSS", "React", "TypeScript", "Next.js"],
-  BackStacks: ["Node.js", "MySql"],
+  Frontend: ["HTML/CSS", "React", "TypeScript", "Next.js"],
+  Backend: ["Node.js", "MySql"],
 };
 
 const CookaDes = () => {
