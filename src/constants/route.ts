@@ -15,6 +15,7 @@ export const links: LinksType = {
   },
   JoinUs: {
     git: "https://github.com/joinus-devs",
+    demo: "https://www.joinus.asia",
   },
   Portfolio: {
     git: "https://github.com/Yoonhwi/portfolio",

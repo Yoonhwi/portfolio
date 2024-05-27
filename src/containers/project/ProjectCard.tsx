@@ -40,7 +40,11 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
           </Flex>
         </CardHeader>
         <CardBody>
-          <Flex gap={8} direction={{ base: "column", lg: "row" }}>
+          <Flex
+            gap={8}
+            direction={{ base: "column", lg: "row" }}
+            alignItems={{ base: "center", lg: "start" }}
+          >
             <Box w={500} h={400} boxShadow={"lg"}>
               {imgs && imgs.length > 0 && (
                 <Swiper<PhotoType> datas={imgs} renderItem={ProjectImage} />

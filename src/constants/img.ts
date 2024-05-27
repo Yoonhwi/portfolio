@@ -17,4 +17,5 @@ export const imgByProject: imgByProjectType = {
     { src: "/calendar/calendar-main.png" },
     { src: "/calendar/calendar1.png" },
   ],
+  "Join-Us": [{ src: "/joinus/joinus-main.png" }],
 };

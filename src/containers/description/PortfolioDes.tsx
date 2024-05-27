@@ -2,27 +2,21 @@ import { OpenWindowBtn } from "@/components";
 import { Flex, Heading, Tag, Text } from "@chakra-ui/react";
 
 const Stacks: { [key: string]: string[] } = {
-  Frontend: ["React", "TypeScript", "Next.js", "React-Query", "Chakra UI"],
+  Frontend: ["React", "TypeScript", "Chakra UI"],
 };
 
-const JoinusDes = () => {
+const PortfolioDes = () => {
   return (
     <Flex direction={"column"} gap={4} fontSize={"large"} fontWeight={"medium"}>
       <OpenWindowBtn project="JoinUs" />
       <Flex gap={1} opacity={0.8} direction={"column"}>
-        <Text>backend 1명 frontend 2명 총3인의 팀프로젝트입니다.</Text>
-        <Text>
-          처음으로 Git을 이용해 협업을 해보며, 백엔드 개발자와 API명세를 만들고
-          issue를남기며 소통하며 협업에 대해 많이 배울 수 있었습니다.
-        </Text>
+        <Text>포트폴리오 용도로 제작된 웹페이지 입니다.</Text>
       </Flex>
       <Flex direction={"column"} gap={1}>
+        <Text>GitHub와 블로그 주소를 확인할 수 있으며</Text>
+        <Text>간단한 자기소개와 함께</Text>
         <Text>
-          공통의 관심사나 목적을 가진 사람들이 한데 모여 소통 및 다양한 활동을
-          할 수 있는 플랫폼입니다.
-        </Text>
-        <Text>
-          플랫폼의 유저들은 클럽을 생성하고, 원하는 클럽에 참여할 수 있습니다.
+          진행했던 프로젝트의 이미지, 링크, 그리고 상세한 설명을 볼 수 있습니다.
         </Text>
       </Flex>
       {Object.keys(Stacks).map((key) => {
@@ -47,4 +41,4 @@ const JoinusDes = () => {
   );
 };
 
-export default JoinusDes;
+export default PortfolioDes;

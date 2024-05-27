@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "@/App.tsx";
+import "@fontsource/open-sans";
+
 import {
   ChakraProvider,
   baseTheme,
@@ -10,6 +12,9 @@ import {
 
 const theme = extendTheme(
   {
+    fonts: {
+      body: `'Raleway', sans`,
+    },
     colors: {
       primary: baseTheme.colors.blue,
     },
