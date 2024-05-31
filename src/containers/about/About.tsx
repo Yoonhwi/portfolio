@@ -4,10 +4,18 @@ import { Photo, Text } from ".";
 
 const About = () => {
   return (
-    <Box bgColor={"gray.100"}>
+    <Box bgColor={"blackAlpha.50"}>
       <CenterLayout>
-        <Flex alignItems={"center"} direction={"column"} gap={20} py={20}>
-          <Heading size={"3xl"}>About Me</Heading>
+        <Flex
+          alignItems={"center"}
+          direction={"column"}
+          gap={20}
+          py={"12"}
+          bgColor={"white"}
+          borderRadius={"md"}
+          my={12}
+        >
+          <Heading size={"2xl"}>About Me</Heading>
           <Flex
             justifyContent={"center"}
             alignItems={"center"}

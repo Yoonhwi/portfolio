@@ -16,7 +16,7 @@ const theme = extendTheme(
       body: `'Raleway', sans`,
     },
     colors: {
-      primary: baseTheme.colors.blue,
+      primary: baseTheme.colors.facebook,
     },
   },
   withDefaultColorScheme({

@@ -25,6 +25,7 @@ const DefaultLayoutHeader = () => {
         top={0}
         zIndex={99}
         boxShadow={isMax ? "none" : "md"}
+        bgColor={"whiteAlpha.800"}
       >
         <Navbar />
       </Flex>

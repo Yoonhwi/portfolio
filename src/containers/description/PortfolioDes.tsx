@@ -8,7 +8,7 @@ const Stacks: { [key: string]: string[] } = {
 const PortfolioDes = () => {
   return (
     <Flex direction={"column"} gap={4} fontSize={"large"} fontWeight={"medium"}>
-      <OpenWindowBtn project="JoinUs" />
+      <OpenWindowBtn project="Portfolio" />
       <Flex gap={1} opacity={0.8} direction={"column"}>
         <Text>포트폴리오 용도로 제작된 웹페이지 입니다.</Text>
       </Flex>
