@@ -1,28 +1,21 @@
-import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
-import { Swiper as _Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { EffectCoverflow, Pagination } from "swiper/modules";
+import { SwiperSlide, Swiper as _Swiper } from "swiper/react";
 
 interface SwiperProps<T> {
   datas: T[];
   renderItem: ({ data }: { data: T }) => JSX.Element;
 }
 const Swiper = <T,>({ datas, renderItem }: SwiperProps<T>) => {
-  console.log(datas);
   return (
     <_Swiper
       effect={"coverflow"}
       grabCursor={true}
-      centeredSlides={true}
-      slidesPerView={"auto"}
       loop={true}
       pagination={true}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-      }}
-      modules={[Autoplay, EffectCoverflow, Pagination]}
+      modules={[EffectCoverflow, Pagination]}
       className="mySwiper"
       style={{ width: "100%", height: "100%" }}
     >

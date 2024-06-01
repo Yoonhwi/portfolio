@@ -8,14 +8,14 @@ export interface imgByProjectType {
 }
 export const imgByProject: imgByProjectType = {
   Cooka: [
-    { src: "/cooka/cooka-main.png" },
     { src: "/cooka/cooka1.png" },
     { src: "/cooka/cooka2.png" },
     { src: "/cooka/cooka3.png" },
+    { src: "/cooka/cooka4.png" },
   ],
   Calendar: [
-    { src: "/calendar/calendar-main.png" },
     { src: "/calendar/calendar1.png" },
+    { src: "/calendar/calendar2.png" },
   ],
   "Join-Us": [
     { src: "/joinus/joinus1.png" },

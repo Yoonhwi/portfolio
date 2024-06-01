@@ -1,17 +1,30 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import App from "@/App.tsx";
-import "@fontsource/open-sans";
-
 import {
   ChakraProvider,
   baseTheme,
   extendTheme,
   withDefaultColorScheme,
 } from "@chakra-ui/react";
+import "@fontsource/open-sans";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./global.css";
+
+const baseStyle = {
+  parts: ["overlay", "dialog"],
+  baseStyle: {
+    dialog: {
+      borderRadius: "md",
+      minW: "80vw",
+    },
+  },
+};
 
 const theme = extendTheme(
   {
+    // components: {
+    //   Drawer: baseStyle,
+    // },
     fonts: {
       body: `'Raleway', sans`,
     },
