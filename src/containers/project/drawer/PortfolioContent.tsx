@@ -1,12 +1,12 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 
-const JoinusDes = () => {
+const PortfolioContent = () => {
   return (
     <Flex direction={"column"} gap={"2"}>
-      <Heading size={"xl"}>Join US</Heading>
+      <Heading size={"xl"}>Portfolio</Heading>
       <Flex direction={"column"} gap={"1"}>
         <Heading size={"lg"}>프로젝트 소개</Heading>
-        <Text>조인어스는 ~</Text>
+        <Text>포트폴리오는 ~</Text>
       </Flex>
       <Heading size={"lg"}>사용된 스택</Heading>
       <Text fontSize={"xl"}>
@@ -18,4 +18,4 @@ const JoinusDes = () => {
   );
 };
 
-export default JoinusDes;
+export default PortfolioContent;

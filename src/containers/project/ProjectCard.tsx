@@ -1,6 +1,6 @@
 import { Swiper } from "@/components";
 import { PhotoType, ProjectType, imgByProject } from "@/constants";
-import { ProjectImage, ProjectModal } from "@/containers";
+import { ProjectDrawer, ProjectImage } from "@/containers";
 import {
   Box,
   Card,
@@ -66,7 +66,7 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
           </CardBody>
         </Stack>
       </Card>
-      <ProjectModal isOpen={isOpen} onClose={onClose} data={data} />
+      <ProjectDrawer isOpen={isOpen} onClose={onClose} data={data} />
     </>
   );
 };

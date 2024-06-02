@@ -1,6 +1,12 @@
 import { Swiper } from "@/components";
-import { PhotoType, ProjectType, photo } from "@/constants";
-import { AboutImage, JoinusDes } from "@/containers";
+import { PhotoType, ProjectType, imgByProject } from "@/constants";
+import {
+  AboutImage,
+  CalendarContent,
+  CookaContent,
+  JoinusContent,
+  PortfolioContent,
+} from "@/containers";
 import {
   Button,
   Drawer,
@@ -12,7 +18,7 @@ import {
   DrawerOverlay,
   Flex,
 } from "@chakra-ui/react";
-import "highlight.js/styles/a11y-dark.css";
+import { useMemo } from "react";
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -21,6 +27,25 @@ interface ProjectModalProps {
 }
 
 const ProjectDrawer = ({ isOpen, onClose, data }: ProjectModalProps) => {
+  const photo = useMemo(() => {
+    return imgByProject[data.name];
+  }, [data.name]);
+
+  const renderItem = useMemo(() => {
+    switch (data.name) {
+      case "Join-Us":
+        return JoinusContent;
+      case "Calendar":
+        return CalendarContent;
+      case "Cooka":
+        return CookaContent;
+      case "Portfolio":
+        return PortfolioContent;
+      default:
+        return () => <></>;
+    }
+  }, [data.name]);
+
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"xl"}>
       <DrawerOverlay />
@@ -41,7 +66,7 @@ const ProjectDrawer = ({ isOpen, onClose, data }: ProjectModalProps) => {
             >
               <Swiper<PhotoType> datas={photo} renderItem={AboutImage} />
             </Flex>
-            <JoinusDes />
+            {renderItem()}
           </Flex>
         </DrawerBody>
         <DrawerFooter>
