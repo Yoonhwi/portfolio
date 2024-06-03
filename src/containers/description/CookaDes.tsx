@@ -1,5 +1,5 @@
-import { OpenWindowBtn } from "@/components";
-import { Flex, Heading, Tag, Text } from "@chakra-ui/react";
+import { OpenWindowBtn, StackTags } from "@/components";
+import { Flex, Text } from "@chakra-ui/react";
 
 const Stacks: { [key: string]: string[] } = {
   Frontend: ["HTML/CSS", "React", "TypeScript", "Next.js"],
@@ -27,26 +27,7 @@ const CookaDes = () => {
         </Text>
         <Text>검색, 좋아요를 활용하여 게시물을 모아볼 수 있습니다.</Text>
       </Flex>
-      <Flex gap={2} direction={"column"}>
-        {Object.keys(Stacks).map((key) => {
-          return (
-            <Flex alignItems={"center"} key={key}>
-              <Heading size={"md"} flex={1}>
-                {key}
-              </Heading>
-              <Flex flex={4} gap={2}>
-                {Stacks[key].map((stack) => {
-                  return (
-                    <Tag key={stack} p={2} colorScheme="gray">
-                      {stack}
-                    </Tag>
-                  );
-                })}
-              </Flex>
-            </Flex>
-          );
-        })}
-      </Flex>
+      <StackTags tags={Stacks} />
     </Flex>
   );
 };

@@ -1,10 +1,10 @@
+import { StackTags } from "@/components";
 import {
   Box,
   Flex,
   Heading,
   Image,
   ListItem,
-  Tag,
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
@@ -19,7 +19,7 @@ const CookaContent = () => {
     <Flex direction={"column"} gap={"20"} fontSize={"18px"}>
       <Flex direction={"column"} gap={"6"}>
         <Heading size={"lg"}>🔥 목표</Heading>
-        <Flex direction={"column"} gap={"2"}>
+        <Flex direction={"column"} gap={"4"}>
           <Text>
             이 프로젝트는 백엔드와 프론트엔드에 대한 이해를 높이기 위해 진행한
             첫 번째 풀스택 프로젝트입니다.
@@ -36,7 +36,7 @@ const CookaContent = () => {
 
       <Flex direction={"column"} gap={"6"}>
         <Heading size={"lg"}>💻 소개</Heading>
-        <Flex direction={"column"} gap={"2"}>
+        <Flex direction={"column"} gap={"4"}>
           <Text>
             요리를 좋아하는 사람들을 위한 간단한 커뮤니티 사이트입니다.
           </Text>
@@ -54,26 +54,7 @@ const CookaContent = () => {
 
       <Flex direction={"column"} gap={"6"}>
         <Heading size={"lg"}>🛠️ 기술 스택</Heading>
-        <Flex gap={2} direction={"column"}>
-          {Object.keys(Stacks).map((key) => {
-            return (
-              <Flex alignItems={"center"} key={key}>
-                <Heading size={"md"} flex={1}>
-                  {key}
-                </Heading>
-                <Flex flex={5} gap={2}>
-                  {Stacks[key].map((stack) => {
-                    return (
-                      <Tag key={stack} p={2} colorScheme="gray">
-                        {stack}
-                      </Tag>
-                    );
-                  })}
-                </Flex>
-              </Flex>
-            );
-          })}
-        </Flex>
+        <StackTags tags={Stacks} />
       </Flex>
 
       <Heading size={"lg"}>⚙️ 구현기능</Heading>
@@ -89,7 +70,7 @@ const CookaContent = () => {
           </Box>
         </Flex>
 
-        <UnorderedList spacing={"2"}>
+        <UnorderedList spacing={"4"}>
           <ListItem>
             전통적인 방식인 Session 을 이용해 로그인 방식을 구현 하였습니다.
           </ListItem>
@@ -113,7 +94,7 @@ const CookaContent = () => {
         </Box>
         <Flex gap={2} direction={"column"} flex={1} my={"12"}>
           <Heading size={"md"}>⚡ 포스팅</Heading>
-          <UnorderedList spacing={"2"}>
+          <UnorderedList spacing={"4"}>
             <ListItem>
               이미지나, 폰트 스타일 등 게시글의 퀄리티를 높이기 위해 text-area를
               대신하여 React-quill 라이브러리를 사용하였습니다.
@@ -131,7 +112,7 @@ const CookaContent = () => {
         </Box>
         <Flex gap={2} direction={"column"} flex={1} my={"12"}>
           <Heading size={"md"}>⚡ 좋아요 / 댓글</Heading>
-          <UnorderedList spacing={"2"}>
+          <UnorderedList spacing={"4"}>
             <ListItem>
               관계형 데이터베이스를 바탕으로 게시글당 좋아요, 댓글을
               구현하였습니다.
@@ -144,7 +125,7 @@ const CookaContent = () => {
       <Flex direction={"column"} gap={"4"}>
         <Heading size={"md"}>⚡ 검색</Heading>
         <Image src="cooka/cookasearch.png" alt="cookasearch" />
-        <UnorderedList spacing={"2"}>
+        <UnorderedList spacing={"4"}>
           <ListItem>
             사용자가 원하는 게시물을 찾기 위해 검색기능을 구현하였습니다.
           </ListItem>
@@ -163,7 +144,7 @@ const CookaContent = () => {
       <Flex direction={"column"} gap={"4"}>
         <Heading size={"md"}>⚡ 화제의 게시글</Heading>
         <Image src="cooka/cookamain.png" alt="cookamain" />
-        <UnorderedList spacing={"2"}>
+        <UnorderedList spacing={"4"}>
           <ListItem>
             메인페이지에서는 좋아요를 기준으로 화제의 게시글을 보여줍니다.
           </ListItem>
@@ -173,7 +154,7 @@ const CookaContent = () => {
       <Flex direction={"column"} gap={"4"}>
         <Heading size={"md"}>⚡ 마이페이지</Heading>
         <Image src="cooka/cookamypage.png" alt="cookamypage" />
-        <UnorderedList spacing={"2"}>
+        <UnorderedList spacing={"4"}>
           <ListItem>
             로그인한 사용자는 마이페이지에서 자신이 작성한 게시글을 볼 수
             있습니다.
@@ -189,7 +170,7 @@ const CookaContent = () => {
 
       <Flex direction={"column"} gap={"4"}>
         <Heading size={"md"}>⚡ 배포</Heading>
-        <UnorderedList spacing={"2"}>
+        <UnorderedList spacing={"4"}>
           <ListItem>
             AWS의 EC2를 이용하여 서버를 구축하고, pm2 를 이용하여 백그라운드로
             실행했습니다.
@@ -204,15 +185,18 @@ const CookaContent = () => {
 
       <Flex direction={"column"} gap={"4"}>
         <Heading size={"md"}>🚩 마치며 느낀점</Heading>
-        <UnorderedList spacing={"2"}>
+        <UnorderedList spacing={"4"}>
           <ListItem>
-            비교적 오랜 시간 소요되었다고 생각합니다. Next.js, TypeScript에
-            익숙하지 않았고, 백엔드 서버를 구축하고, MySQL을 사용하는 것에
-            무지했기에 공부가 필요했습니다. 프로젝트를 진행하며 해당 기술 스택에
-            대해 이해도가 높아졌다고 생각합니다.
+            비교적 오랜 시간 소요되었다고 생각합니다.
+            <br /> Next.js, TypeScript에 익숙하지 않았고, 백엔드 서버를
+            구축하고, MySQL을 사용하는 것에 무지했기에 공부가 필요했습니다.
+            <br />
+            프로젝트를 진행하며 해당 기술 스택에 대해 이해도가 높아졌다고
+            생각합니다.
           </ListItem>
           <ListItem>
             프로젝트를 진행하면서, 백엔드와 프론트엔드의 연결을 이해하고,
+            <br />
             데이터베이스를 어떻게 설계하고, 관리하는지에 대해 배울 수
             있었습니다.
           </ListItem>
@@ -226,8 +210,8 @@ const CookaContent = () => {
           </ListItem>
           <ListItem>
             반복적인 코드를 사용하면 가독성이 떨어지고 수정이 매우 힘들어진다는
-            걸 알게 됐고, 코드에 대한 설계와 리팩토링의 중요성을 깨닫게
-            되었습니다.
+            걸 알게 됐고,
+            <br /> 코드에 대한 설계와 리팩토링의 중요성을 깨닫게 되었습니다.
           </ListItem>
         </UnorderedList>
       </Flex>

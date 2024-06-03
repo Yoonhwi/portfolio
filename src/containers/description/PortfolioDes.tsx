@@ -1,5 +1,5 @@
-import { OpenWindowBtn } from "@/components";
-import { Flex, Heading, Tag, Text } from "@chakra-ui/react";
+import { OpenWindowBtn, StackTags } from "@/components";
+import { Flex, Text } from "@chakra-ui/react";
 
 const Stacks: { [key: string]: string[] } = {
   Frontend: ["React", "TypeScript", "Chakra UI"],
@@ -19,24 +19,7 @@ const PortfolioDes = () => {
           진행했던 프로젝트의 이미지, 링크, 그리고 상세한 설명을 볼 수 있습니다.
         </Text>
       </Flex>
-      {Object.keys(Stacks).map((key) => {
-        return (
-          <Flex alignItems={"center"} key={key}>
-            <Heading size={"md"} flex={1}>
-              {key}
-            </Heading>
-            <Flex flex={4} gap={2}>
-              {Stacks[key].map((stack) => {
-                return (
-                  <Tag key={stack} p={2} colorScheme="gray">
-                    {stack}
-                  </Tag>
-                );
-              })}
-            </Flex>
-          </Flex>
-        );
-      })}
+      <StackTags tags={Stacks} />
     </Flex>
   );
 };
