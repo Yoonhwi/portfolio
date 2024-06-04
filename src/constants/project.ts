@@ -16,7 +16,7 @@ export interface ProjectType {
 export const projects: ProjectType[] = [
   {
     name: "Portfolio",
-    date: "2024.04 ~ 2024.04",
+    date: "2024.04 ~ ",
     description: PortfolioDes,
   },
   {

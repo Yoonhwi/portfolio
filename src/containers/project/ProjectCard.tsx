@@ -43,12 +43,8 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
             </Flex>
           </CardHeader>
           <CardBody>
-            <Flex
-              gap={8}
-              direction={{ base: "column", lg: "row" }}
-              alignItems={{ base: "center", lg: "start" }}
-            >
-              <Box w={500} h={400} boxShadow={"lg"}>
+            <Flex gap={8} direction={{ base: "column", lg: "row" }}>
+              <Box w={500} h={400} boxShadow={"lg"} alignSelf={"center"}>
                 {imgs && imgs.length > 0 && (
                   <Swiper<PhotoType> datas={imgs} renderItem={ProjectImage} />
                 )}
@@ -59,6 +55,7 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
                 _hover={{
                   cursor: "pointer",
                 }}
+                minH={{ base: "auto", lg: 400 }}
               >
                 {data.description && data.description()}
               </Box>

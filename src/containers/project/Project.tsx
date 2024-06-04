@@ -2,10 +2,20 @@ import { CenterLayout } from "@/components";
 import { projects } from "@/constants";
 import { Box, Flex, Heading, Grid } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
+import { useEffect, useRef } from "react";
+import { useScrollObserver } from "@/hooks";
 
 const Project = () => {
+  const projectRef = useRef<HTMLDivElement>(null);
+  const { registerSection } = useScrollObserver();
+
+  useEffect(() => {
+    if (!projectRef.current) return;
+    registerSection("Projects", projectRef.current.offsetTop);
+  }, [projectRef, registerSection]);
+
   return (
-    <Box>
+    <Box ref={projectRef}>
       <CenterLayout>
         <Flex alignItems={"center"} direction={"column"} gap={20} py={20}>
           <Heading size={"3xl"} color={"primary.500"}>

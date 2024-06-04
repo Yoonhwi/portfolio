@@ -10,7 +10,7 @@ const CalendarDes = () => {
   return (
     <Flex direction={"column"} gap={4} fontSize={"large"} fontWeight={"medium"}>
       <OpenWindowBtn project="Calendar" />
-      <Flex gap={1} opacity={0.8} direction={"column"}>
+      <Flex gap={"2"} opacity={0.8} direction={"column"}>
         <Text>
           데이터 관리의 효율에 대해 고민하던시점에, 캐싱관리나 fetching 성공여부
           등 다양한 플래그들을 지원해주는 React-Query에 대해 알게 되었습니다.
@@ -21,7 +21,7 @@ const CalendarDes = () => {
           목표 입니다.
         </Text>
       </Flex>
-      <Flex direction={"column"} gap={1}>
+      <Flex direction={"column"} gap={"2"}>
         <Text>
           해당 목적에 맞게 대중적인 TodoList와 Calendar를 결합한 형태의
           프로젝트를 주제로 선정했습니다.

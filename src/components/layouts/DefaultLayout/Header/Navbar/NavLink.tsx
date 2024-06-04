@@ -1,29 +1,29 @@
-import { navLinks } from "@/constants";
-import { HStack, Box } from "@chakra-ui/react";
-import { useCallback, useEffect } from "react";
+import { Box, HStack } from "@chakra-ui/react";
 import ContactLink from "./ContactLink";
+import { useScrollObserver } from "@/hooks";
+import { SectionName } from "@/constants";
+
+interface NavLinkProps {
+  name: SectionName;
+}
+
+const navLinks: NavLinkProps[] = [
+  { name: "About" },
+  { name: "Projects" },
+  { name: "Contact" },
+];
+
 const NavLink = () => {
-  const hanldeNavClick = useCallback((offsetY: number) => {
-    window.scrollTo({ top: offsetY, behavior: "smooth" });
-  }, []);
-
-  //스크롤위치
-
-  const handler = () => {
-    console.log("scrollY", scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handler);
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
+  const { scrollToSection } = useScrollObserver();
 
   return (
     <HStack spacing={12} as={"nav"} fontSize={20} fontWeight={600}>
       {navLinks.map((link) => (
         <Box
           key={link.name}
-          onClick={() => hanldeNavClick(link.offsetY)}
+          onClick={() => {
+            scrollToSection(link.name);
+          }}
           _hover={{
             cursor: "pointer",
             transform: "scale(1.2)",

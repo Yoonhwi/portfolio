@@ -1,10 +1,20 @@
 import { CenterLayout } from "@/components";
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import { Photo, Text } from ".";
+import { useEffect, useRef } from "react";
+import { useScrollObserver } from "@/hooks";
 
 const About = () => {
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const { registerSection } = useScrollObserver();
+
+  useEffect(() => {
+    if (!aboutRef.current) return;
+    registerSection("About", aboutRef.current.offsetTop);
+  }, [aboutRef, registerSection]);
+
   return (
-    <Box bgColor={"blackAlpha.50"}>
+    <Box bgColor={"blackAlpha.50"} ref={aboutRef}>
       <CenterLayout>
         <Flex
           alignItems={"center"}

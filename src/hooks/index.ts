@@ -1,2 +1,1 @@
-export { default as useDeviceType } from "./useDeviceType";
-export { default as useGetHeightByDevice } from "./useGetHeightByDevice";
+export { default as useScrollObserver } from "./useScrollObserver";
