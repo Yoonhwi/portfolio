@@ -1,12 +1,12 @@
 import { CenterLayout } from "@/components";
+import { useScrollStore } from "@/store";
 import { Box, Flex, Heading } from "@chakra-ui/react";
-import { Photo, Text } from ".";
 import { useEffect, useRef } from "react";
-import { useScrollObserver } from "@/hooks";
+import { Photo, Text } from ".";
 
 const About = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
-  const { registerSection } = useScrollObserver();
+  const { registerSection } = useScrollStore(["registerSection"]);
 
   useEffect(() => {
     if (!aboutRef.current) return;

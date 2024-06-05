@@ -1,13 +1,13 @@
 import { CenterLayout } from "@/components";
 import { projects } from "@/constants";
-import { Box, Flex, Heading, Grid } from "@chakra-ui/react";
-import ProjectCard from "./ProjectCard";
+import { useScrollStore } from "@/store";
+import { Box, Flex, Grid, Heading } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
-import { useScrollObserver } from "@/hooks";
+import ProjectCard from "./ProjectCard";
 
 const Project = () => {
   const projectRef = useRef<HTMLDivElement>(null);
-  const { registerSection } = useScrollObserver();
+  const { registerSection } = useScrollStore(["registerSection"]);
 
   useEffect(() => {
     if (!projectRef.current) return;

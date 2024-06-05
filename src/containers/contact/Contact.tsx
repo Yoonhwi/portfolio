@@ -1,11 +1,10 @@
-import { useScrollObserver } from "@/hooks";
+import { useScrollStore } from "@/store";
 import { Box } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
 
 const Contact = () => {
   const contactRef = useRef<HTMLDivElement>(null);
-
-  const { registerSection } = useScrollObserver();
+  const { registerSection } = useScrollStore(["registerSection"]);
 
   useEffect(() => {
     if (!contactRef.current) return;
