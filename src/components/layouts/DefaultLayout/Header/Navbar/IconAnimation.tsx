@@ -1,7 +1,7 @@
 import { Box, Center, IconButton, Tooltip, keyframes } from "@chakra-ui/react";
 import { ReactElement } from "react";
 
-interface IconBoxProps {
+interface IconAnimationProps {
   icon: ReactElement;
   label: string;
   link: string;
@@ -16,7 +16,7 @@ to {
 }
 `;
 
-const IconBox = ({ icon, label, link }: IconBoxProps) => {
+const IconAnimation = ({ icon, label, link }: IconAnimationProps) => {
   return (
     <Tooltip label={label}>
       <Center
@@ -59,4 +59,4 @@ const IconBox = ({ icon, label, link }: IconBoxProps) => {
   );
 };
 
-export default IconBox;
+export default IconAnimation;

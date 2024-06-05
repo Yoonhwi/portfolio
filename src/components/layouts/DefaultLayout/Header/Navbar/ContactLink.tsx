@@ -1,17 +1,17 @@
 import { FaGithub } from "react-icons/fa";
-import IconBox from "./IconBox";
+import IconAnimation from "./IconAnimation";
 import { HStack } from "@chakra-ui/react";
 import { FaBlog } from "react-icons/fa6";
 
 const ContactLink = () => {
   return (
     <HStack spacing={4}>
-      <IconBox
+      <IconAnimation
         icon={<FaGithub style={{ fontSize: "2rem" }} />}
         label={"Git hub"}
         link={"https://github.com/Yoonhwi"}
       />
-      <IconBox
+      <IconAnimation
         icon={<FaBlog style={{ fontSize: "1.8rem" }} />}
         label={"Blog"}
         link={"https://winhwi.tistory.com/"}
