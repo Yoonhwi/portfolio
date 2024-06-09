@@ -36,7 +36,7 @@ export const myInfo: MyInfoType[] = [
   },
   {
     key: "생년월일",
-    value: "96.01.05",
+    value: "96. 01. 05",
     icon: FaBirthdayCake,
   },
   {

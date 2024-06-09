@@ -11,13 +11,17 @@ interface SwiperProps<T> {
 const Swiper = <T,>({ datas, renderItem }: SwiperProps<T>) => {
   return (
     <_Swiper
+      autoHeight={true}
       effect={"coverflow"}
       grabCursor={true}
       loop={true}
       pagination={true}
       modules={[EffectCoverflow, Pagination]}
       className="mySwiper"
-      style={{ width: "100%", height: "100%" }}
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
     >
       {datas.map((data, index) => (
         <SwiperSlide key={index}>{renderItem({ data })}</SwiperSlide>

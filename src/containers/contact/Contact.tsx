@@ -69,11 +69,11 @@ const Contact = () => {
       as={"footer"}
       bgColor={"primary.300"}
       ref={contactRef}
-      py={"12"}
+      py={"16"}
       color={"white"}
     >
-      <Flex direction={"column"} gap={"8"} alignItems={"center"}>
-        <Heading as={"h2"} size={"lg"}>
+      <Flex direction={"column"} gap={"12"} alignItems={"center"}>
+        <Heading as={"h2"} size={"2xl"}>
           Contact
         </Heading>
         <Flex gap={"4"}>

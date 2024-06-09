@@ -2,7 +2,7 @@ import { CenterLayout } from "@/components";
 import { useScrollStore } from "@/store";
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
-import { Photo, Text } from ".";
+import { Text } from ".";
 
 const About = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -21,7 +21,6 @@ const About = () => {
           direction={"column"}
           gap={20}
           py={"12"}
-          bgColor={"white"}
           borderRadius={"md"}
           my={12}
         >
@@ -32,7 +31,7 @@ const About = () => {
             gap={16}
             direction={{ base: "column", xl: "row" }}
           >
-            <Photo />
+            {/* <Photo /> */}
             <Text />
           </Flex>
         </Flex>

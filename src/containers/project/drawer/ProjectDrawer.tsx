@@ -1,7 +1,6 @@
 import { Swiper } from "@/components";
 import { PhotoType, ProjectType, imgByProject } from "@/constants";
 import {
-  AboutImage,
   CalendarContent,
   CookaContent,
   JoinusContent,
@@ -19,6 +18,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useMemo } from "react";
+import DrawerImage from "./DrawerImage";
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -56,15 +56,13 @@ const ProjectDrawer = ({ isOpen, onClose, data }: ProjectModalProps) => {
           <Flex direction={"column"} gap={"8"}>
             <Flex
               w={"full"}
-              h={600}
               direction={"column"}
               gap={4}
-              alignItems={"center"}
               boxShadow={"2xl"}
               overflow={"hidden"}
               p={2}
             >
-              <Swiper<PhotoType> datas={photo} renderItem={AboutImage} />
+              <Swiper<PhotoType> datas={photo} renderItem={DrawerImage} />
             </Flex>
             {renderItem()}
           </Flex>

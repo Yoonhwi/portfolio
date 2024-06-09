@@ -1,16 +1,16 @@
 import { PhotoType } from "@/constants";
 import { Flex, Image, Text } from "@chakra-ui/react";
 
-interface AboutImagesProps {
+interface DrawerImageProcps {
   data: PhotoType;
 }
-const AboutImage = ({ data }: AboutImagesProps) => {
+const DrawerImage = ({ data }: DrawerImageProcps) => {
   return (
     <Flex direction={"column"} gap={6} alignItems={"center"}>
-      <Image src={data.src} alt="about_img" />
+      <Image src={data.src} alt="drawer_img" />
       <Text>{data.text}</Text>
     </Flex>
   );
 };
 
-export default AboutImage;
+export default DrawerImage;
