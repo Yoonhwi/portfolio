@@ -59,10 +59,16 @@ const Contact = () => {
     window.open(url, "_blank");
   }, []);
 
-  useEffect(() => {
+  const updateSection = useCallback(() => {
     if (!contactRef.current) return;
     registerSection("Contact", contactRef.current.offsetTop);
-  }, [contactRef, registerSection]);
+  }, [registerSection]);
+
+  useEffect(() => {
+    updateSection();
+    window.addEventListener("resize", updateSection);
+    return () => window.removeEventListener("resize", updateSection);
+  }, [contactRef, updateSection]);
 
   return (
     <Box

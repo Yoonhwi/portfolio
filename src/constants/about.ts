@@ -5,7 +5,6 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { IoSchoolSharp } from "react-icons/io5";
-import { PhotoType } from ".";
 
 export interface MyInfoType {
   key: string;
@@ -13,20 +12,20 @@ export interface MyInfoType {
   icon: IconType;
 }
 
-export const photo: PhotoType[] = [
-  {
-    src: "photo1.jpg",
-    text: "😀",
-  },
-  {
-    src: "photo2.jpg",
-    text: "😆",
-  },
-  {
-    src: "photo3.jpg",
-    text: "😋",
-  },
-];
+// export const photo: PhotoType[] = [
+//   {
+//     src: "photo1.jpg",
+//     text: "😀",
+//   },
+//   {
+//     src: "photo2.jpg",
+//     text: "😆",
+//   },
+//   {
+//     src: "photo3.jpg",
+//     text: "😋",
+//   },
+// ];
 
 export const myInfo: MyInfoType[] = [
   {

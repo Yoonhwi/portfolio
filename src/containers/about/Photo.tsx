@@ -1,7 +1,4 @@
-import { Swiper } from "@/components";
-import { PhotoType, photo } from "@/constants";
 import { Flex } from "@chakra-ui/react";
-import { AboutImage } from ".";
 
 const Photo = () => {
   return (
@@ -15,7 +12,7 @@ const Photo = () => {
       overflow={"hidden"}
       p={2}
     >
-      <Swiper<PhotoType> datas={photo} renderItem={AboutImage} />
+      {/* <Swiper<PhotoType> datas={photo} renderItem={AboutImage} /> */}
     </Flex>
   );
 };

@@ -1,17 +1,23 @@
 import { CenterLayout } from "@/components";
 import { useScrollStore } from "@/store";
 import { Box, Flex, Heading } from "@chakra-ui/react";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { Text } from ".";
 
 const About = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const { registerSection } = useScrollStore(["registerSection"]);
 
-  useEffect(() => {
+  const updateSection = useCallback(() => {
     if (!aboutRef.current) return;
     registerSection("About", aboutRef.current.offsetTop);
-  }, [aboutRef, registerSection]);
+  }, [registerSection]);
+
+  useEffect(() => {
+    updateSection();
+    window.addEventListener("resize", updateSection);
+    return () => window.removeEventListener("resize", updateSection);
+  }, [aboutRef, updateSection]);
 
   return (
     <Box bgColor={"blackAlpha.50"} ref={aboutRef}>
