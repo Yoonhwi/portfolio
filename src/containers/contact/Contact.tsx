@@ -7,6 +7,7 @@ import ContactLink from "./ContactLink";
 const Contact = () => {
   const contactRef = useRef<HTMLDivElement>(null);
   const { registerSection } = useScrollStore(["registerSection"]);
+
   const isVisible = useIntersectionObserver({
     target: contactRef,
     threshold: 0.5,
