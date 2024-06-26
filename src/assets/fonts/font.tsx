@@ -3,13 +3,10 @@ import { Global } from "@emotion/react";
 const Fonts = () => {
   <Global
     styles={`@font-face {
-        font-family: 'NanumSquare';
-        src: url('/fonts/NanumSquareR.eot');
-        src: url('/fonts/NanumSquareR.eot?#iefix') format('embedded-opentype'),
-             url('/fonts/NanumSquareR.woff') format('woff'),
-             url('/fonts/NanumSquareR.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
+        font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
       }`}
   />;
 };

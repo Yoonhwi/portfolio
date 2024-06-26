@@ -11,8 +11,8 @@ import ReactDOM from "react-dom/client";
 const theme = extendTheme(
   {
     fonts: {
-      heading: "NanumSquare",
-      body: "NanumSquare",
+      heading: "SUIT-Regular",
+      body: "SUIT-Regular",
     },
     colors: {
       primary: baseTheme.colors.facebook,

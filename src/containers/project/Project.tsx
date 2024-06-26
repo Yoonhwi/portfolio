@@ -1,5 +1,6 @@
 import { CenterLayout } from "@/components";
 import { projects } from "@/constants";
+import { useIntersectionObserver } from "@/hooks";
 import { useScrollStore } from "@/store";
 import { Box, Flex, Grid, Heading, Tag } from "@chakra-ui/react";
 import { useCallback, useEffect, useRef } from "react";
@@ -8,6 +9,10 @@ import ProjectCard from "./ProjectCard";
 const Project = () => {
   const projectRef = useRef<HTMLDivElement>(null);
   const { registerSection } = useScrollStore(["registerSection"]);
+  const isVisible = useIntersectionObserver({
+    target: projectRef,
+    threshold: 0.1,
+  });
 
   const updateSection = useCallback(() => {
     if (!projectRef.current) return;
@@ -21,7 +26,11 @@ const Project = () => {
   }, [projectRef, updateSection]);
 
   return (
-    <Box ref={projectRef}>
+    <Box
+      ref={projectRef}
+      opacity={isVisible ? 1 : 0}
+      transition={"opacity 1s ease-in-out"}
+    >
       <CenterLayout>
         <Flex alignItems={"center"} direction={"column"} gap={20} py={20}>
           <Flex direction={"column"} gap={"8"} alignItems={"center"}>

@@ -20,7 +20,7 @@ const About = () => {
   }, [aboutRef, updateSection]);
 
   return (
-    <Box bgColor={"blackAlpha.50"} ref={aboutRef}>
+    <Box bgColor={"blackAlpha.50"} ref={aboutRef} h={"100vh"}>
       <CenterLayout>
         <Flex
           alignItems={"center"}
@@ -37,7 +37,6 @@ const About = () => {
             gap={16}
             direction={{ base: "column", xl: "row" }}
           >
-            {/* <Photo /> */}
             <Text />
           </Flex>
         </Flex>
